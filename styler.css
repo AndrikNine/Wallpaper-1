@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+    font-family: "Archive";
+    src: url("Archive-Regular-ttf.ttf") format("TrueType");
+}
+@font-face {
+    font-family: 'Brasika';
+    src: url('brasika-display-ttf.ttf') format('truetype');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: rgb(18, 17, 17);
+}
+header{
+    height: 10%;
+    width: 90%;
+    background-color: rgb(14, 14, 14);
+    left: 50%;
+    translate: -50%;
+    margin-top: 2.5%;
+    position: relative;
+    border-radius: 9px;
+    box-shadow: -3px -3px 10px rgba(58, 54, 54, 0.719),-1px -1px 10px rgba(13, 216, 206, 0.195);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    margin-bottom: 2.5%;
+
+    &:hover{
+        scale: 1.01;
+        box-shadow: 1px 1px 20px rgba(101, 105, 105, 0.412),3px 3px 10px rgba(58, 54, 54, 0.719);
+    }
+}
+.logo{
+    color: rgb(219, 213, 213);
+    font-family: "Brasika",sans-serif;
+    font-size: 1.5vw;
+    margin-left: 2vw;
+    cursor: crosshair;
+}
+.home-icon{
+    color: rgb(230, 221, 221);
+    font-size: 1.5vw;
+    position: relative;
+    top: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover{
+        scale: 1.1;
+        color: white;
+    }
+}
+.header-links-container{
+    display: flex;
+    gap: 2vw;
+    margin-right: 2vw;
+}
+.header-links{
+    list-style: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+.header-links:hover .header-link-text{
+    animation: header-links 0.7s ease forwards;
+}
+.header-link-text{
+    list-style-type: none;
+    color: rgb(230, 221, 221);
+    cursor: pointer;
+    font-family: "Poppins",sans-serif;
+    display: block;
+}
+.preview-section{
+    height: 70vh;
+    width: 90%;
+    /* background-color: green; */
+    position: relative;
+    left: 50%;
+    translate: -50%;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10% 90%,
+        transparent
+    );
+}
+.preview-overlay{
+    height: 100%;
+    width: 100%;
+    mask-image: linear-gradient(
+        to bottom
+        transparent,
+        black,
+        transparent);
+    position: absolute;
+    z-index: 5;
+    /* background-color: black; */
+    box-shadow: inset 3px 3px 30px black;
+
+}
+.title-container{
+    height: 35%;
+    width: 60%;
+    position: absolute;
+    /* background-color: blue; */
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wallpaper-preview-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    position: absolute; 
+    left: 10%;
+    bottom: 100%;
+    top: auto;
+    animation: preview 8s linear infinite ;
+    animation-delay: -5s;
+}
+.wallpaper-preview-vertical{
+    display: flex;
+    gap: 1vw;
+    position: absolute; 
+    top: auto;
+    left: 100%;
+    bottom: 5%;
+    animation: preview-vertical 8s linear infinite ;
+    z-index: -1;
+}
+.wallpaper-container{
+    height: 40vh;
+    width: 40vh;
+    background-color: gray;
+    box-shadow:  0 0 10px rgba(69, 68, 68, 0.572);
+    opacity: 1;
+}
+.wallpaper-container-vertical{
+    height: 40vh;
+    width: 40vh;
+    background-color: gray;
+    box-shadow:  0 0 10px rgba(69, 68, 68, 0.572);
+    opacity: 1;
+}
+.preview-wallpaper{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.explore-text{
+    font-size: 3vw;
+    text-transform: uppercase;
+    font-family: "Archive",sans-serif;
+    color: white;
+    margin-top: 2vw;
+    text-align: center;
+    text-shadow: 0 0 10px rgb(53, 51, 51);
+}
+
+@keyframes header-links {
+    from{
+        transform: translateY(100%);
+    }
+}
+@keyframes preview {
+    
+    to{
+        bottom: -500%;
+    }
+}
+@keyframes preview-vertical {
+    
+    to{
+        left: -200%;
+        
+    }
+}
+@keyframes rotate-3d {
+    to{
+        transform: translateY(0deg);
+    }
+}
